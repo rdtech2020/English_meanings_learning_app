@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Score{% endblock title %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/css/score.css" />
+{% endblock head %}
+
+{% block body %}
+  <div class="container my-4 pt-5">
+    <div class="row justify-content-center pt-5">
+      <div class="col-lg-6 col-md-8 col-sm-10 pt-5">
+        <div class="question-box p-3">
+          <h5 class="mt-3 mb-3 text-center text-white">Performance score out of {{ result[2] }}</h5>
+          <div class="p-1 px-4 mt-3 score rounded text-center text-success">
+            <span class="d-block">Right</span>
+            <span class="text-dark">{{ result[0] }}</span>
+          </div>
+          <div class="p-1 px-4 mt-3 speed rounded text-center text-warning">
+            <span class="d-block">Wrong</span>
+            <span class="text-dark">{{ result[1] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}

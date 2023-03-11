@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <title>Login</title>
+  </head>
+  <body>
+  <div id="loader"></div>
+    <div class="main-login-form">
+      <div class="login-form-label">
+        <h2>Login</h2>
+      </div>
+      <form action="/" class="login-form" method="POST">
+        <input maxlength="30" required="true" name="user_email" class="username-input" type="email" placeholder="Email"/>
+        <input  maxlength="30" required="true" name="password" class="password-input"  type="password"   placeholder="password"/>
+        <button type="submit" class="login-button">login</button>
+      </form>
+      <div class="divider">
+        <div class="line"></div>
+        <div class="or">Or</div>
+        <div class="line"></div>
+      </div>
+      <button type="submit" onclick="window.location.href='http://127.0.0.1:8686/signup';" class="google-login-button">
+        <div class="google-login-text">Sign UP</div>
+      </button>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script>
+       {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  Swal.fire({
+                      title: "Dear User",
+                      text: "{{ message }}",
+                      type: "{{ category }}",
+                      confirmButtonColor: '#5a5562',
+                      confirmButtonText: 'OK'
+                  })
+              {% endfor %}
+          {% endif %}
+       {% endwith %}
+    </script>
+  <script>
+    // show the loader
+    document.getElementById("loader").style.display = "block";
+
+    // hide the loader after the page has loaded
+    window.addEventListener("load", function() {
+        document.getElementById("loader").style.display = "none";
+    });
+</script>
+  </body>
+</html>

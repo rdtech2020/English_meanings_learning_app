@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Quiz{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/ques.css" />
+{% endblock head %}
+{% block body %}
+<div class="container pt-5">
+    <div class="row justify-content-center pt-5">
+        <div class="col-md-8 col-lg-6 pt-5">
+            <div class="pt-5">
+                <div class="card-body">
+                    <h2 class="card-title mb-4 d-inline" style="white-space: pre;">Q. {{ val }}) Which word is correct?</h2>
+                    <div class="mt-2">
+                        <form name="quizForm" method="POST" onsubmit="return validateForm(event)">
+                            <div class="mb-3 mt-4">
+                                {% for option in options %}
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" id="{{ option }}" name="answer" value="{{ option }}">
+                                    <label class="ml-2 form-check-label" for="{{ option }}">{{ option }}</label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button type="submit" class="btn login-button btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+        let ans = document.querySelector('input[name="answer"]:checked');
+        if (!ans) {
+            Swal.fire({
+                title: "Error",
+                text: "You have not selected any option!",
+                type: "error",
+                confirmButtonColor: '#5a5562',
+                confirmButtonText: 'OK'
+            });
+            return false;
+        }
+        document.forms["quizForm"].submit();
+    }
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    Swal.fire({
+        title: "Dear User",
+        text: "{{ message }}",
+        type: "{{ category }}",
+        confirmButtonColor: '#5a5562',
+        confirmButtonText: 'OK'
+    })
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</script>
+{% endblock body %}
