@@ -23,8 +23,3 @@ class ExtraFunc:
                     return False
             else:
                 return f'Request failed with status code {response.status_code}: {response.text}'
-
-
-check_email = ExtraFunc('test@example.com')
-print(check_email.is_valid_email())
-
