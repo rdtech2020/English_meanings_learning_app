@@ -18,9 +18,10 @@ class ExtraFunc:
 
             if response.ok:
                 result = response.json()
-                if result['status'] == 'valid':
+                if 'status' in result and result['status'] == 'valid':
                     return True
                 else:
                     return False
             else:
                 return f'Request failed with status code {response.status_code}: {response.text}'
+
