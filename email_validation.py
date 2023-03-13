@@ -5,6 +5,7 @@ import requests
 class ExtraFunc:
     def __init__(self, email_str):
         self.email_str = email_str
+        self.key = '' #insert your key
 
     def is_valid_email(self):
         # Check if the email address matches the pattern of a valid email address
@@ -12,7 +13,7 @@ class ExtraFunc:
         if not re.match(pattern, self.email_str):
             return False
         else:
-            url = f'https://api.zerobounce.net/v2/validate?api_key=2d3d19530a274f7e99c33357c7bbe52f&email={self.email_str}'
+            url = f'https://api.zerobounce.net/v2/validate?api_key={self.key}&email={self.email_str}'
             response = requests.get(url)
 
             if response.ok:
