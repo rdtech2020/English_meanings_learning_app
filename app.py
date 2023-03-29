@@ -184,9 +184,9 @@ def logout_session():
 if __name__ == '__main__':
     db = Database()
     db.create_table('users', 'id INTEGER PRIMARY KEY,username TEXT, password TEXT')
-    Create question Table in DB
+#     Create question Table in DB
     db.create_ques_table('questions', 'id INTEGER PRIMARY KEY, user INTEGER, number INTEGER, status BOOL, word TEXT')
-    create contact table
+#     create contact table
     db.create_contact_table('contact', 'id INTEGER PRIMARY KEY, name TEXT, email TEXT, company TEXT, message TEXT')
     db.close()
     app.run()
