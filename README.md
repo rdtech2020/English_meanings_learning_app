@@ -1,7 +1,7 @@
 # English Meanings Learning Flask App
 
 This is a Flask web application that helps users learn English meanings. The application is designed to allow users to learn correct English words and get performance also.
-
+Project is live on [Pratik Python Pathshala](https://pratik-pathshala.onrender.com)
 ### Prerequisites
 Before running this application, you must have the following installed:
 * Python 3.x
@@ -26,9 +26,9 @@ pip install -r requirements.txt
 ### Usage
 To run the application, navigate to the root directory of the project and run the following command:
 ```cmd
-python app.py
+gunicorn app:app
 ```
-After running the above command, open your web browser and navigate to `http://127.0.0.1:8686` to access the application.
+After running the above command, open your web browser and navigate to `http://127.0.0.1:8000` to access the application.
 
 ### Features
 The application has the following features:
