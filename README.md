@@ -1,7 +1,9 @@
 # English Meanings Learning Flask App
 
 This is a Flask web application that helps users learn English meanings. The application is designed to allow users to learn correct English words and get performance also.
+
 Project is live on [Pratik Python Pathshala](https://pratik-pathshala.onrender.com)
+
 ### Prerequisites
 Before running this application, you must have the following installed:
 * Python 3.x
