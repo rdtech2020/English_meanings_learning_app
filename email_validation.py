@@ -13,16 +13,15 @@ class ExtraFunc:
         if not re.match(pattern, self.email_str):
             return False
         else:
-            return True
-#             url = f'https://api.zerobounce.net/v2/validate?api_key={self.key}&email={self.email_str}'
-#             response = requests.get(url)
+            url = f'https://api.zerobounce.net/v2/validate?api_key={self.key}&email={self.email_str}'
+            response = requests.get(url)
 
-#             if response.ok:
-#                 result = response.json()
-#                 if 'status' in result and result['status'] == 'valid':
-#                     return True
-#                 else:
-#                     return False
-#             else:
-#                 return f'Request failed with status code {response.status_code}: {response.text}'
+            if response.ok:
+                result = response.json()
+                if 'status' in result and result['status'] == 'valid':
+                    return True
+                else:
+                    return False
+            else:
+                return f'Request failed with status code {response.status_code}: {response.text}'
 
