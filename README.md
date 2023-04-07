@@ -6,7 +6,7 @@ Project is live on [Pratik Python Pathshala](https://pratik-pathshala.onrender.c
 
 ### Prerequisites
 Before running this application, you must have the following installed:
-* Python 3.x
+* Python 3.8
 * Flask
 * requests
 
