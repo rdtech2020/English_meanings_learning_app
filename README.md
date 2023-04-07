@@ -2,6 +2,8 @@
 
 This is a Flask web application that helps users learn English meanings. The application is designed to allow users to learn correct English words and get performance also.
 
+![Project view](./static/img/view.png)
+
 Project is live on [Pratik Python Pathshala](https://pratik-pathshala.onrender.com)
 
 ### Prerequisites
